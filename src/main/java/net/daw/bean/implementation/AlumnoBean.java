@@ -47,6 +47,14 @@ public class AlumnoBean implements GenericBean {
     private String apellido1 = "";
     @Expose
     private String apellido2 = "";
+    
+    public AlumnoBean() {
+        this.id = 0;
+    }
+
+    public AlumnoBean(Integer id) {
+        this.id = id;
+    }
 
     public Integer getId() {
         return id;
@@ -127,7 +135,7 @@ public class AlumnoBean implements GenericBean {
     }
 
     @Override
-    public GenericBean fill(ResultSet oResultSet, Connection pooledConnection, Integer expand) throws SQLException, Exception {
+    public AlumnoBean fill(ResultSet oResultSet, Connection pooledConnection, Integer expand) throws SQLException, Exception {
         this.setId(oResultSet.getInt("id"));
         this.setNombre(oResultSet.getString("nombre"));
         this.setApellido1(oResultSet.getString("apellido1"));
