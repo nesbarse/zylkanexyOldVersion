@@ -32,6 +32,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import net.daw.bean.publicinterface.GenericBean;
+import net.daw.dao.implementation.UsuarioDao;
 
 /**
  *
@@ -47,6 +48,26 @@ public class AlumnoBean implements GenericBean {
     private String apellido1 = "";
     @Expose
     private String apellido2 = "";
+    @Expose(serialize = false)
+    private Integer id_usuario = 0;
+    @Expose(deserialize = false)
+    private UsuarioBean obj_usuario = null;
+
+    public Integer getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(Integer id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public UsuarioBean getObj_usuario() {
+        return obj_usuario;
+    }
+
+    public void setObj_usuario(UsuarioBean obj_usuario) {
+        this.obj_usuario = obj_usuario;
+    }
     
     public AlumnoBean() {
         this.id = 0;
@@ -94,6 +115,13 @@ public class AlumnoBean implements GenericBean {
         strJson += "nombre:" + nombre + ",";
         strJson += "apellido1:" + apellido1 + ",";
         strJson += "apellido2:" + apellido2 + ",";
+        if (expand) {
+//            strJson += "obj_estado:" + obj_estado.toJson(false) + ",";
+            strJson += "obj_usuario:" + obj_usuario.toJson(false) + ",";
+        } else {
+//            strJson += "id_estado:" + id_estado + ",";
+            strJson += "id_usuario:" + id_usuario + ",";
+        }
         strJson += "}";
         return strJson;
     }
@@ -106,6 +134,7 @@ public class AlumnoBean implements GenericBean {
         strColumns += "nombre,";
         strColumns += "apellido1,";
         strColumns += "apellido2,";
+        strColumns += "id_usuario";
 
         return strColumns;
     }
@@ -116,7 +145,8 @@ public class AlumnoBean implements GenericBean {
         strColumns += id + ",";
         strColumns += nombre + ",";
         strColumns += apellido1 + ",";
-        strColumns += apellido2;
+        strColumns += apellido2 + ",";
+        strColumns += id_usuario;
 
         return strColumns;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -128,7 +158,8 @@ public class AlumnoBean implements GenericBean {
         strPairs += "id=" + id + ",";
         strPairs += "nombre=" + nombre + ",";
         strPairs += "apellido1=" + apellido1 + ",";
-        strPairs += "apellido2=" + apellido2;
+        strPairs += "apellido2=" + apellido2 + ",";
+        strPairs += "id_usuario=" + id_usuario;
 
         return strPairs;
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -140,6 +171,15 @@ public class AlumnoBean implements GenericBean {
         this.setNombre(oResultSet.getString("nombre"));
         this.setApellido1(oResultSet.getString("apellido1"));
         this.setApellido2(oResultSet.getString("apellido2"));
+        if (expand > 0) {
+            UsuarioBean oUsuarioBean = new UsuarioBean();
+            UsuarioDao oUsuarioDao = new UsuarioDao(pooledConnection);
+            oUsuarioBean.setId(oResultSet.getInt("id_usuario"));
+            oUsuarioBean = oUsuarioDao.get(oUsuarioBean, expand - 1);
+            this.setObj_usuario(oUsuarioBean);
+        } else {
+            this.setId_usuario(oResultSet.getInt("id_usuario"));
+        }
         return this;
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
