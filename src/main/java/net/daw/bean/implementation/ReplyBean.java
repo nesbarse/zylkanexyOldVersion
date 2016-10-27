@@ -1,10 +1,12 @@
 /*
- * Copyright (c) 2015 by Rafael Angel Aznar Aparici (rafaaznar at gmail dot com)
+ * Copyright (c) 2016 by Rafael Angel Aznar Aparici (rafaaznar at gmail dot com)
  * 
- * openAUSIAS: The stunning micro-library that helps you to develop easily 
- *             AJAX web applications by using Java and jQuery
- * openAUSIAS is distributed under the MIT License (MIT)
- * Sources at https://github.com/rafaelaznar/
+ * zylkanexy server: Helps you to develop easily AJAX web applications 
+ *               by copying and modifying this Java Server.
+ *
+ * Sources at https://github.com/rafaelaznar/zylkanexy
+ * 
+ * zylkanexy server is distributed under the MIT License (MIT)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +25,6 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- * 
  */
 package net.daw.bean.implementation;
 
@@ -34,12 +35,10 @@ package net.daw.bean.implementation;
 public class ReplyBean {
 
     private Integer code;
-    private String message;
     private String json;
 
-    public ReplyBean(Integer code, String message, String json) {
+    public ReplyBean(Integer code, String json) {
         this.code = code;
-        this.message = message;
         this.json = json;
     }
 
@@ -49,14 +48,6 @@ public class ReplyBean {
 
     public void setCode(Integer code) {
         this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public String getJson() {
