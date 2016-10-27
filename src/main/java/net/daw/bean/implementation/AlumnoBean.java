@@ -108,23 +108,6 @@ public class AlumnoBean implements GenericBean {
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
     }
-    
-    public String toJson(Boolean expand) {
-        String strJson = "{";
-        strJson += "id:" + id + ",";
-        strJson += "nombre:" + nombre + ",";
-        strJson += "apellido1:" + apellido1 + ",";
-        strJson += "apellido2:" + apellido2 + ",";
-        if (expand) {
-//            strJson += "obj_estado:" + obj_estado.toJson(false) + ",";
-            strJson += "obj_usuario:" + obj_usuario.toJson(false) + ",";
-        } else {
-//            strJson += "id_estado:" + id_estado + ",";
-            strJson += "id_usuario:" + id_usuario + ",";
-        }
-        strJson += "}";
-        return strJson;
-    }
 
     @Override
     public String getColumns() {

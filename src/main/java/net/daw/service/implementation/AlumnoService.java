@@ -98,9 +98,9 @@ public class AlumnoService implements TableServiceInterface, ViewServiceInterfac
                     oDataConnectionSource.disposeConnection();
                 }
             }
-            return new ReplyBean(200, "OK", JsonMessage.getJsonMsg("200", data));
+            return new ReplyBean(200, "OK");
         } else {
-            return new ReplyBean(401, "Unauthorized", JsonMessage.getJsonMsg("401", "Unauthorized"));
+            return new ReplyBean(401, "Unauthorized");
         }
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -131,9 +131,9 @@ public class AlumnoService implements TableServiceInterface, ViewServiceInterfac
                     oDataConnectionSource.disposeConnection();
                 }
             }
-            return new ReplyBean(200, "OK", JsonMessage.getJsonMsg("200", data));
+            return new ReplyBean(200, "OK");
         } else {
-            return new ReplyBean(401, "Unauthorized", JsonMessage.getJsonMsg("401", "Unauthorized"));
+            return new ReplyBean(401, "Unauthorized");
         }
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -175,9 +175,9 @@ public class AlumnoService implements TableServiceInterface, ViewServiceInterfac
                     oDataConnectionSource.disposeConnection();
                 }
             }
-            return new ReplyBean(200, "OK", JsonMessage.getJsonMsg("200", data));
+            return new ReplyBean(200, "OK");
         } else {
-            return new ReplyBean(401, "Unauthorized", JsonMessage.getJsonMsg("401", "Unauthorized"));
+            return new ReplyBean(401, "Unauthorized");
         }
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -208,9 +208,9 @@ public class AlumnoService implements TableServiceInterface, ViewServiceInterfac
                     oDataConnectionSource.disposeConnection();
                 }
             }
-            return new ReplyBean(200, "OK", JsonMessage.getJsonMsg("200", data));
+            return new ReplyBean(200, "OK");
         } else {
-            return new ReplyBean(401, "Unauthorized", JsonMessage.getJsonMsg("401", "Unauthorized"));
+            return new ReplyBean(401, "Unauthorized");
         }
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -243,9 +243,9 @@ public class AlumnoService implements TableServiceInterface, ViewServiceInterfac
                     oDataConnectionSource.disposeConnection();
                 }
             }
-            return new ReplyBean(200, "OK", JsonMessage.getJsonMsg("200", data));
+            return new ReplyBean(200, "OK");
         } else {
-            return new ReplyBean(401, "Unauthorized", JsonMessage.getJsonMsg("401", "Unauthorized"));
+            return new ReplyBean(401, "Unauthorized");
         }
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -273,9 +273,9 @@ public class AlumnoService implements TableServiceInterface, ViewServiceInterfac
                     oDataConnectionSource.disposeConnection();
                 }
             }
-            return new ReplyBean(200, "OK", JsonMessage.getJsonMsg("200", data));
+            return new ReplyBean(200, "OK");
         } else {
-            return new ReplyBean(401, "Unauthorized", JsonMessage.getJsonMsg("401", "Unauthorized"));
+            return new ReplyBean(401, "Unauthorized");
         }
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
